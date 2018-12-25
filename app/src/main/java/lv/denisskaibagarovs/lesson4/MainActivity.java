@@ -105,12 +105,13 @@ public class MainActivity extends Activity {
                             convertView.setTag(viewHolder);
                         } else  {
                             viewHolder = (ViewHolder)convertView.getTag();
+
+                            viewHolder.imageViewPhoto = convertView.findViewById(R.id.imageView);
+                            viewHolder.textViewAuthor = convertView.findViewById(R.id.textViewAuthor);
+                            convertView.setTag(viewHolder);
                         }
 
-                        viewHolder.imageViewPhoto = convertView.findViewById(R.id.imageView);
-                        viewHolder.textViewAuthor = convertView.findViewById(R.id.textViewAuthor);
-                        convertView.setTag(viewHolder);
-                    }
+
 
                         //TODO 5 Write function to get an author name from photo item (inside photo Item)
 //                        viewHolder.textViewAuthor.setText(photoItem.getAuthorName());
