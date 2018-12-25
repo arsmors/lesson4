@@ -41,6 +41,10 @@ public class MainActivity extends Activity {
         //TODO 2 using OKHttp create a request with url:
         //"https://api.unsplash.com/photos/?client_id=311ed690d7678d20b8ce556e56d5bf168d6ddf9fa1126e58193d95089d796542"
 
+        Request request = new Request.Builder()
+                .url("https://api.unsplash.com/photos/?client_id=311ed690d7678d20b8ce556e56d5bf168d6ddf9fa1126e58193d95089d796542")
+                .build();
+
         final Gson gson = new Gson();
         OkHttpClient client = new OkHttpClient();
         JsonParser parser = new JsonParser();
@@ -55,10 +59,10 @@ public class MainActivity extends Activity {
 
                     for (int i = 0; i < array.length(); i++) {
                         JSONObject imgObject = array.getJSONObject(i);
-
                         JsonElement mJson = parser.parse(imgObject.toString());
-                        //TODO 3 uisng GSON parse mJson to PhotoItem object
-//                        PhotoItem photoItem =
+
+                        //TODO 3 using GSON parse mJson to PhotoItem object
+                        PhotoItem photoItem = new PhotoItem();
                         photoItems.add(photoItem);
 
                     }
@@ -93,6 +97,7 @@ public class MainActivity extends Activity {
 
                         ViewHolder viewHolder;
                         if(convertView.getTag() == null) {
+
                             // TODO 4 Map ViewHolder elements via Butterknife
                             convertView.setTag(viewHolder);
                         } else  {
