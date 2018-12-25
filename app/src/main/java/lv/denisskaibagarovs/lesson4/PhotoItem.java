@@ -6,8 +6,10 @@ public class PhotoItem {
     Map<String, String> urls;
     User user;
 
-    public String getImgUrl() {
-        return this.urls.get("regular");
+    public String getImgUrl() { return this.urls.get("regular");
+    }
+
+    public User getUser() { return user;
     }
 
     // TODO Write a function to get authorName from User

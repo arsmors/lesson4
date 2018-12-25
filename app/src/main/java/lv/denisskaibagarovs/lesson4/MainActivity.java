@@ -63,11 +63,11 @@ public class MainActivity extends Activity {
                         JsonElement mJson = parser.parse(imgObject.toString());
 
                         //TODO 3 using GSON parse mJson to PhotoItem object
-                        Gson gson = new Gson();
                  //       PhotoItem photoItem = new PhotoItem();
                         PhotoItem photoItem = gson.fromJson(mJson, PhotoItem.class);
                 //        User user= gson.fromJson(jsonInString, User.class);
                         photoItems.add(photoItem);
+
 
                     }
                     runOnUiThread(()-> {
@@ -114,7 +114,7 @@ public class MainActivity extends Activity {
 
 
                         //TODO 5 Write function to get an author name from photo item (inside photo Item)
-                        viewHolder.textViewAuthor.setText(photoItem.getAuthorName());
+                        viewHolder.textViewAuthor.setText(photoItem.getUser());
 
                         //TODO 6 Load image into imageView via Picasso
                         // ImgView - viewHolder.imageViewPhoto
