@@ -116,6 +116,7 @@ public class MainActivity extends Activity {
                         //TODO 5 Write function to get an author name from photo item (inside photo Item)
                         viewHolder.textViewAuthor.setText(photoItem.getAuthorName());
 
+
                         //TODO 6 Load image into imageView via Picasso
                         // ImgView - viewHolder.imageViewPhoto
                         // PhotoURL - photoItem.getImgUrl()
