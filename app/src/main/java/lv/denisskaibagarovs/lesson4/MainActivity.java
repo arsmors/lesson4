@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.GridView;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonElement;
@@ -99,13 +100,11 @@ public class MainActivity extends Activity {
                                     .inflate(R.layout.custom_item_img, null, false);
                         }
 
-                        ViewHolder viewHolder = new ViewHolder();
+
                         if(convertView.getTag() == null) {
 
                             // TODO 4 Map ViewHolder elements via Butterknife
-                            convertView.setTag(viewHolder);
-                        } else  {
-                            viewHolder = (ViewHolder)convertView.getTag();
+                            ViewHolder viewHolder = new ViewHolder();
 
                             viewHolder.imageViewPhoto = convertView.findViewById(R.id.imageView);
                             viewHolder.textViewAuthor = convertView.findViewById(R.id.textViewAuthor);
@@ -114,7 +113,10 @@ public class MainActivity extends Activity {
 
 
                         //TODO 5 Write function to get an author name from photo item (inside photo Item)
-                        viewHolder.textViewAuthor.setText(photoItem.getAuthorName());
+                        TextView textViewAuthor = ((ViewHolder) convertView.getTag()).textViewAuthor;
+                        textViewAuthor.setText(photoItem.getAuthorName());
+
+                      //  viewHolder.textViewAuthor.setText(photoItem.getAuthorName());
 
 
                         //TODO 6 Load image into imageView via Picasso
@@ -122,7 +124,11 @@ public class MainActivity extends Activity {
                         // PhotoURL - photoItem.getImgUrl()
                        // viewHolder.imageViewPhoto.setImageResource(photoItem.getImgUrl());
                        // Picasso.get(this).load(photoItem.getImgUrl()).into(R.id.imageView);
-                        Picasso.get().load(photoItem.getImgUrl()).into(viewHolder.imageViewPhoto);
+
+                        ImageView imageViewPhoto = ((ViewHolder) convertView.getTag()).imageViewPhoto;
+                       // imageViewPhoto.setImageDrawable(photoItem.getImgUrl());
+
+                        Picasso.get().load(photoItem.getImgUrl()).into(imageViewPhoto);
                         return convertView;
 
                         //TODO 7* Extra!!!
