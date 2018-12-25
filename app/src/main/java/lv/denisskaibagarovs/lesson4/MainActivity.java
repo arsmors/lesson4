@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.GridView;
+import android.widget.ImageView;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonElement;
@@ -63,7 +64,7 @@ public class MainActivity extends Activity {
 
                         //TODO 3 using GSON parse mJson to PhotoItem object
                         Gson gson = new Gson();
-                //        PhotoItem photoItem = new PhotoItem();
+                 //       PhotoItem photoItem = new PhotoItem();
                         PhotoItem photoItem = gson.fromJson(mJson, PhotoItem.class);
                 //        User user= gson.fromJson(jsonInString, User.class);
                         photoItems.add(photoItem);
@@ -112,13 +113,13 @@ public class MainActivity extends Activity {
                         }
 
 
-
                         //TODO 5 Write function to get an author name from photo item (inside photo Item)
-//                        viewHolder.textViewAuthor.setText(photoItem.getAuthorName());
+                        viewHolder.textViewAuthor.setText(photoItem.getAuthorName());
 
                         //TODO 6 Load image into imageView via Picasso
                         // ImgView - viewHolder.imageViewPhoto
                         // PhotoURL - photoItem.getImgUrl()
+
                         return convertView;
 
                         //TODO 7* Extra!!!
