@@ -1,5 +1,8 @@
 package lv.denisskaibagarovs.lesson4;
 
+import android.location.Location;
+import android.util.EventLogTags;
+
 import java.util.Map;
 
 //public class PhotoItem {
@@ -30,6 +33,8 @@ import java.util.Map;
 public class PhotoItem {
     Images urls;
     User user;
+    UserLocation sponsored_by;
+
 
     public String getImgUrl() {
         return this.urls.regular;
@@ -39,6 +44,10 @@ public class PhotoItem {
         return this.user.name;
     }
 
+    public String getLocation() {
+        return this.sponsored_by.location;
+    }
+
     public class User {
         String name;
     }
@@ -46,4 +55,9 @@ public class PhotoItem {
     public class Images {
         String regular;
     }
+
+    public class UserLocation {
+        String location;
+    }
+
 }

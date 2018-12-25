@@ -6,4 +6,5 @@ import android.widget.TextView;
 public class ViewHolder {
     ImageView imageViewPhoto;
     TextView textViewAuthor;
+    TextView textViewLocation;
 }
