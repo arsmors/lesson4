@@ -99,7 +99,7 @@ public class MainActivity extends Activity {
                                     .inflate(R.layout.custom_item_img, null, false);
                         }
 
-                        ViewHolder viewHolder;
+                        ViewHolder viewHolder = new ViewHolder();
                         if(convertView.getTag() == null) {
 
                             // TODO 4 Map ViewHolder elements via Butterknife
@@ -119,8 +119,9 @@ public class MainActivity extends Activity {
                         //TODO 6 Load image into imageView via Picasso
                         // ImgView - viewHolder.imageViewPhoto
                         // PhotoURL - photoItem.getImgUrl()
-                        viewHolder.imageViewPhoto.setImageResource(photoItem.getImgUrl());
-
+                       // viewHolder.imageViewPhoto.setImageResource(photoItem.getImgUrl());
+                       // Picasso.get(this).load(photoItem.getImgUrl()).into(R.id.imageView);
+                        Picasso.get().load(photoItem.getImgUrl()).into(viewHolder.imageViewPhoto);
                         return convertView;
 
                         //TODO 7* Extra!!!
