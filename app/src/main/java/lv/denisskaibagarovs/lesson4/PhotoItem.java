@@ -9,7 +9,7 @@ public class PhotoItem {
     public String getImgUrl() { return this.urls.get("regular");
     }
 
-    public User getUser() { return user;
+    public String getAuthorName() { return user.getAuthorName();
     }
 
     // TODO Write a function to get authorName from User
