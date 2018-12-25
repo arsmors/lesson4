@@ -62,7 +62,10 @@ public class MainActivity extends Activity {
                         JsonElement mJson = parser.parse(imgObject.toString());
 
                         //TODO 3 using GSON parse mJson to PhotoItem object
-                        PhotoItem photoItem = new PhotoItem();
+                        Gson gson = new Gson();
+                //        PhotoItem photoItem = new PhotoItem();
+                        PhotoItem photoItem = gson.fromJson(mJson, PhotoItem.class);
+                //        User user= gson.fromJson(jsonInString, User.class);
                         photoItems.add(photoItem);
 
                     }
@@ -103,6 +106,11 @@ public class MainActivity extends Activity {
                         } else  {
                             viewHolder = (ViewHolder)convertView.getTag();
                         }
+
+                        viewHolder.imageViewPhoto = convertView.findViewById(R.id.imageView);
+                        viewHolder.textViewAuthor = convertView.findViewById(R.id.textViewAuthor);
+                        convertView.setTag(viewHolder);
+                    }
 
                         //TODO 5 Write function to get an author name from photo item (inside photo Item)
 //                        viewHolder.textViewAuthor.setText(photoItem.getAuthorName());
