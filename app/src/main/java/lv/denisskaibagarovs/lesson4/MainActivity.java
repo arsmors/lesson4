@@ -118,7 +118,7 @@ public class MainActivity extends Activity {
                         textViewAuthor.setText(photoItem.getAuthorName());
 
                         TextView textViewLocation = ((ViewHolder) convertView.getTag()).textViewLocation;
-                        textViewLocation.setText(photoItem.getLocation());
+                        textViewLocation.setText(photoItem.getUserLocation());
 
                       //  viewHolder.textViewAuthor.setText(photoItem.getAuthorName());
 

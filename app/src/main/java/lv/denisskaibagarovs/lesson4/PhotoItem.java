@@ -33,7 +33,6 @@ import java.util.Map;
 public class PhotoItem {
     Images urls;
     User user;
-    UserLocation sponsored_by;
 
 
     public String getImgUrl() {
@@ -44,20 +43,18 @@ public class PhotoItem {
         return this.user.name;
     }
 
-    public String getLocation() {
-        return this.sponsored_by.location;
+    public String getUserLocation() {
+        return this.user.location;
     }
+
 
     public class User {
         String name;
+        String location;
     }
 
     public class Images {
         String regular;
-    }
-
-    public class UserLocation {
-        String location;
     }
 
 }
